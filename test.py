@@ -58,5 +58,11 @@ class TestCart(unittest.TestCase):
 	def test_cannot_update_quantity_if_not_in_cart(self):
 		self.assertRaises(CartError, lambda: self.cart.update_quantity(self.product_one, 10))
 
+	def test_can_save_cart(self):
+		self.cart.add_product(self.product_one)
+		self.cart.save(self.session)
+		self.new_cart = Cart(self.session)
+		self.assertEqual(self.cart.cart_items, self.new_cart.cart_items)
+
 if __name__ == '__main__':
     unittest.main()

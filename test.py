@@ -50,7 +50,7 @@ class TestCart(unittest.TestCase):
 	def test_subtotal_of_empty_cart_is_zero(self):
 		self.assertEqual(self.cart.sub_total, 0)
 
-	def can_update_quanity(self):
+	def test_can_update_quanity(self):
 		self.cart.add_product(self.product_one, 10)
 		self.cart.update_quantity(self.product_one, 15)
 		self.assertEqual(self.cart.get_cart_item(self.product_one).quantity, 15)

@@ -67,7 +67,7 @@ class TestCart(unittest.TestCase):
 	def test_can_reset_cart(self):
 		self.cart.add_product(self.product_one, 10)
 		self.cart.reset()
-		self.assertEqual(self.cart.num_items, 0)
+		self.assertEqual(self.cart.cart_items, [])
 
 
 if __name__ == '__main__':

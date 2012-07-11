@@ -1,7 +1,7 @@
 Simple Shopping Cart, ideal for use with Django.
 
-Created as a simple thought exercise on a lonely Friday evening while I wait 
-for Ms. Danux's train to arrive. Could work though, I guess.
+Created as a simple thought exercise on a lonely Friday evening. 
+Could work though, I guess.
 
 Cart takes any generic product - could be a Django model, could be anything.
 The product must have two attributes at the very least:
@@ -12,6 +12,8 @@ The product must have two attributes at the very least:
 class Product(object):
     def __init__(self, product_id, price):
         self.product_id = int(product_id)
-        self.price = price
+        self.price = float(price)
 
 See test.py for full usage
+
+Note: Mock must be installed to run UnitTests

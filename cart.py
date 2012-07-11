@@ -35,7 +35,7 @@ class Cart(object):
 
 	def remove_product(self, product):
 		try:
-			del self.cart_items[[i for i,cart_item in enumerate(self.cart_items) if cart_item.product.product_id == product.product_id][0]]
+			del self.cart_items[[i for i, cart_item in enumerate(self.cart_items) if cart_item.product.product_id == product.product_id][0]]
 		except IndexError:
 			raise CartError(u'Product is not in cart')
 

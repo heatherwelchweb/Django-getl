@@ -1,18 +1,14 @@
 from cart import Cart, CartError
+from mock import NonCallableMock
 import unittest
 
-
-class Product(object):
-    def __init__(self, product_id, price):
-        self.product_id = int(product_id)
-        self.price = price
 
 class TestCart(unittest.TestCase):
 
 	def setUp(self):
 		self.session = {}
-		self.product_one = Product(product_id=1, price=1.99)
-		self.product_two = Product(product_id=2, price=2.49)
+		self.product_one = NonCallableMock(product_id=1, price=1.99)
+		self.product_two = NonCallableMock(product_id=2, price=2.49)
 		self.cart = Cart(self.session)
 
 	def test_can_add_product(self):

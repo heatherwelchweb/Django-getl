@@ -7,6 +7,7 @@ class CartError(Exception):
 
 
 class CartItem(object):
+
     def __init__(self, product, quantity=1):
         self.product = product
         self.quantity = quantity
@@ -17,6 +18,7 @@ class CartItem(object):
 
 
 class Cart(object):
+
     def __init__(self, session):
         self.cart_items = session.get('cart_items', [])
 
